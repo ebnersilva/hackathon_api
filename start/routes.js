@@ -17,6 +17,12 @@ Route.group(() => {
   Route.post('/user_activity', 'UserActivityController.store');
 
   Route.post('/user_point', 'UserPointController.store');
+
+  Route.get('/questions', 'QuestionController.index');
+
+  Route.get('/answers', 'AnswerController.index');
+
+  Route.post('/user_answer', 'UserAnswerController.store');
 }).middleware(['auth']);
 
 Route.get('/users', 'UserController.index');
@@ -24,6 +30,8 @@ Route.post('/users', 'UserController.store');
 Route.get('/users/:id', 'UserController.show');
 Route.put('/users/:id', 'UserController.update');
 Route.delete('/users/:id', 'UserController.destroy');
+
+
 
 
 

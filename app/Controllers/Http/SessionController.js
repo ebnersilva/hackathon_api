@@ -7,8 +7,6 @@ class SessionController {
     try {
       const data = request.only(['email', 'password']);
 
-      console.log(data.email)
-
       const user = await User.findByOrFail('email', data.email);
 
       const token = await auth.attempt(
